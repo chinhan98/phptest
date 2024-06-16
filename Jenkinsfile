@@ -11,11 +11,6 @@ pipeline {
 			}
 		}
 
-		stage('Initialize'){
-			def dockerHome = tool 'dock'
-			env.PATH = "${dockerHome}/bin:${env.PATH}"
-		}
-
 		stage('Test') {
 			steps {
                 sh './vendor/bin/phpunit tests'
